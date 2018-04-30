@@ -20,6 +20,8 @@ Feel free to check their page here: https://pypi.org/project/z3-solver/
 
 I really enjoy building and compiling packages. This love comes with pain and Z3 has quirks when you are trying to install it. Some steps to alleviate the pain:
 
+### Python
+
 ```
 $ sudo chmod -R a+r /usr/lib/python2.7/dist-packages/z3
 $ sudo chmod a+x /usr/lib/python2.7/dist-packages/z3
@@ -36,4 +38,20 @@ Only then you can do the basic import operation:
 
 ```
 >>> from z3 import *
+```
+
+### OCaml
+
+```
+TMP_OCAML_PATH=$HOME/.opam/system/lib
+
+sudo chown -R $USER $TMP_OCAML_PATH/Z3
+sudo chown -R $USER $TMP_OCAML_PATH/stublibs/*z3*
+
+chmod a+rx $TMP_OCAML_PATH/Z3
+chmod a+rx $TMP_OCAML_PATH/Z3/z3ml.cmxs
+chmod a+rx $TMP_OCAML_PATH/stublibs/dllz3ml.so
+
+chmod -R a+r $TMP_OCAML_PATH/Z3
+chmod -R a+r $TMP_OCAML_PATH/stublibs/*z3*
 ```
