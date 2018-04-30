@@ -4,7 +4,7 @@ from z3 import *
 
 # SEND + MORE = MONEY
 
-D, E, M, N, O, R, S, Y = Ints('D, E, M, N, O, R, S, Y')
+D, E, M, N, O, R, S, Y = Ints('D E M N O R S Y')
 
 s = Solver()
 
