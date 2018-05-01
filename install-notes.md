@@ -43,6 +43,7 @@ Only then you can do the basic import operation:
 ### OCaml
 
 ```
+# Your actual path may vary, so check first
 TMP_OCAML_PATH=$HOME/.opam/system/lib
 
 sudo chown -R $USER $TMP_OCAML_PATH/Z3
@@ -54,4 +55,17 @@ chmod a+rx $TMP_OCAML_PATH/stublibs/dllz3ml.so
 
 chmod -R a+r $TMP_OCAML_PATH/Z3
 chmod -R a+r $TMP_OCAML_PATH/stublibs/*z3*
+
+# Might be optional, try utop before doing this
+### sudo ln -s $TMP_OCAML_PATH/stublibs/dllz3ml.so /usr/lib/
+### sudo ln -s $TMP_OCAML_PATH/Z3/z3ml.cmxs /usr/lib/
+```
+
+After setting up the access rights, try `utop`:
+
+```
+#require "Z3" ;;
+
+open Z3 ;;
+open Z3.Solver ;;
 ```
