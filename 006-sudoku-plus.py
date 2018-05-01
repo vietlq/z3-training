@@ -33,7 +33,7 @@ cur_row, cur_col = 0, 0
 
 for c in puzzle:
     if c != '.':
-        s.add(cells[cur_row][cur_col] == BitVec(int(c), 16))
+        s.add(cells[cur_row][cur_col] == BitVecVal(int(c), 16))
     # Move to the next column
     cur_col = cur_col + 1
     # Move to the beginning of the next row
